@@ -93,7 +93,7 @@
         android:layout_marginTop="60dp"
         android:fontFamily="@font/montserrat_bold"
         android:text="@string/logo_of_app_2"
-        android:textColor="@color/name_of_app"
+        android:textColor="#FF1744"
         android:textSize="40sp"
         app:layout_constraintStart_toEndOf="@+id/textView4"
         app:layout_constraintTop_toTopOf="parent" />
