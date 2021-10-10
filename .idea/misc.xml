@@ -3,8 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/NIKITA/AndroidStudioProjects/TestUsersRDP/app/src/main/res/drawable/ic_c_sharp_dot_net.xml" value="0.24114583333333334" />
+        <entry key="..\:/Users/NIKITA/AndroidStudioProjects/TestUsersRDP/app/src/main/res/drawable/ic_course1.xml" value="0.24114583333333334" />
+        <entry key="..\:/Users/NIKITA/AndroidStudioProjects/TestUsersRDP/app/src/main/res/drawable/ic_cplus.xml" value="0.24114583333333334" />
         <entry key="..\:/Users/NIKITA/AndroidStudioProjects/TestUsersRDP/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/NIKITA/AndroidStudioProjects/TestUsersRDP/app/src/main/res/layout/category_item.xml" value="0.5" />
+        <entry key="..\:/Users/NIKITA/AndroidStudioProjects/TestUsersRDP/app/src/main/res/layout/course_item.xml" value="0.5" />
       </map>
     </option>
   </component>
