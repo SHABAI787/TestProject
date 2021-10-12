@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.testusersrdp.MainActivity;
 import com.example.testusersrdp.R;
 
 import java.util.List;
@@ -34,6 +35,13 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
     @Override
     public void onBindViewHolder(@NonNull CategoryViewHolder holder, int position) {
         holder.categoryTitle.setText(categories.get(position).getTitle());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.showCoursesByCategory(categories.get(holder.getAdapterPosition()).getId());
+            }
+        });
     }
 
     @Override

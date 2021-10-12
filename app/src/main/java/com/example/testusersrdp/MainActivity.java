@@ -5,6 +5,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
 
 import com.example.testusersrdp.adapter.CategoryAdapter;
 import com.example.testusersrdp.adapter.CourseAdapter;
@@ -19,7 +21,10 @@ public class MainActivity extends AppCompatActivity {
 
     RecyclerView categoryRecycler, courseRecycler;
     CategoryAdapter categoryAdapter;
-    CourseAdapter  courseAdapter;
+    static CourseAdapter  courseAdapter;
+    static List<Course> courseList = new ArrayList<>();
+    static List<Course> fullCourseList = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,11 +37,11 @@ public class MainActivity extends AppCompatActivity {
         categoryList.add(new Category(4, "Прочее"));
         setCategoruRecycler(categoryList);
 
-        List<Course> courseList = new ArrayList<>();
-        courseList.add(new Course(1, "course1", "Профессия Java\nразработчик", "1 января", "начальный", "#424345"));
-        courseList.add(new Course(2, "ccharp_1", "Профессия C#\nразрботчик", "1 января", "начальный", "#611884"));
-        courseList.add(new Course(3, "python", "Профессия C++\nразрботчик", "1 января", "начальный", "#9FA52D"));
+        courseList.add(new Course(1, "course1", "Профессия Java\nразработчик", "1 января", "начальный", "#424345", "Описание курса", 1));
+        courseList.add(new Course(2, "ccharp_1", "Профессия C#\nразрботчик", "1 января", "начальный", "#611884", "Описание курса", 2));
+        courseList.add(new Course(3, "python", "Профессия C++\nразрботчик", "1 января", "начальный", "#9FA52D", "Описание курса", 3));
 
+        fullCourseList.addAll(courseList);
         setCourseRecycler(courseList);
     }
 
@@ -54,5 +59,28 @@ public class MainActivity extends AppCompatActivity {
         categoryRecycler.setLayoutManager(layoutManager);
         categoryAdapter = new CategoryAdapter(this, categoryList);
         categoryRecycler.setAdapter(categoryAdapter);
+    }
+
+    public static void showCoursesByCategory(int category){
+        List<Course>  filterCourses = new ArrayList<>();
+
+        for (Course c: fullCourseList){
+            if(c.getCategory() == category)
+                filterCourses.add(c);
+        }
+        setChangedCourseList(filterCourses);
+    }
+
+    public static void setChangedCourseList(List<Course>  filterCourses){
+        courseList.clear();
+        courseList.addAll(filterCourses);
+        courseAdapter.notifyDataSetChanged();
+    }
+
+    public void onFilterOff(View view)
+    {
+        setChangedCourseList(fullCourseList);
+        // выводим сообщение
+        Toast.makeText(this, "Фильтер выключен", Toast.LENGTH_SHORT).show();
     }
 }

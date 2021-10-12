@@ -24,8 +24,9 @@
             <ImageView
                 android:id="@+id/courseImage"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="147dp"
                 android:contentDescription="@string/app_name"
+                android:transitionName="courseImage"
                 app:srcCompat="@drawable/ic_course1" />
 
             <TextView
