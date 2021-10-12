@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -39,10 +40,16 @@ public class MainActivity extends AppCompatActivity {
 
         courseList.add(new Course(1, "course1", "Профессия Java\nразработчик", "1 января", "начальный", "#424345", "Описание курса", 1));
         courseList.add(new Course(2, "ccharp_1", "Профессия C#\nразрботчик", "1 января", "начальный", "#611884", "Описание курса", 2));
-        courseList.add(new Course(3, "python", "Профессия C++\nразрботчик", "1 января", "начальный", "#9FA52D", "Описание курса", 3));
+        courseList.add(new Course(3, "python", "Профессия Python\nразрботчик", "1 января", "начальный", "#9FA52D", "Описание курса", 3));
 
         fullCourseList.addAll(courseList);
         setCourseRecycler(courseList);
+    }
+
+    public void openShopingCart(View view){
+        Intent intent = new Intent(this, OrderPage.class);
+        startActivity(intent);
+
     }
 
     private void setCourseRecycler(List<Course> courseList) {

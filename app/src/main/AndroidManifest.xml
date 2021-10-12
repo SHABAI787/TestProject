@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TestUsersRDP">
         <activity
+            android:name=".OrderPage"
+            android:exported="true" />
+        <activity
             android:name=".CoursePage"
             android:exported="true" />
         <activity
