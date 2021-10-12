@@ -35,7 +35,23 @@ public class CoursePage extends AppCompatActivity {
 
     public void addToCart(View view){
         int item_id = getIntent().getIntExtra("coursePageId", 0);
-        Order.items_id.add(item_id);
-        Toast.makeText(this, "Добавлено!", Toast.LENGTH_SHORT).show();
+        if(Order.items_id.contains(item_id))
+            Toast.makeText(this, "Уже было добавлено", Toast.LENGTH_SHORT).show();
+        else {
+            Order.items_id.add(item_id);
+            Toast.makeText(this, "Добавлено!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void Info(View view){
+        Toast.makeText(this, "Информация о компании", Toast.LENGTH_SHORT).show();
+    }
+
+    public  void Contacts(View view){
+        Toast.makeText(this, "Вывод контактов компании", Toast.LENGTH_SHORT).show();
+    }
+
+    public void Exit(View view){
+        finish();
     }
 }

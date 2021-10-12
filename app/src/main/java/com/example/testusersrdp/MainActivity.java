@@ -39,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
         setCategoruRecycler(categoryList);
 
         courseList.add(new Course(1, "course1", "Профессия Java\nразработчик", "1 января", "начальный", "#424345", "Описание курса", 1));
-        courseList.add(new Course(2, "ccharp_1", "Профессия C#\nразрботчик", "1 января", "начальный", "#611884", "Описание курса", 2));
-        courseList.add(new Course(3, "python", "Профессия Python\nразрботчик", "1 января", "начальный", "#9FA52D", "Описание курса", 3));
+        courseList.add(new Course(2, "ccharp_1", "Профессия C#\nразработчик", "1 января", "начальный", "#611884", "Описание курса", 2));
+        courseList.add(new Course(3, "python", "Профессия Python\nразработчик", "1 января", "начальный", "#9FA52D", "Описание курса", 3));
 
         fullCourseList.addAll(courseList);
         setCourseRecycler(courseList);
@@ -49,7 +49,6 @@ public class MainActivity extends AppCompatActivity {
     public void openShopingCart(View view){
         Intent intent = new Intent(this, OrderPage.class);
         startActivity(intent);
-
     }
 
     private void setCourseRecycler(List<Course> courseList) {
@@ -89,5 +88,13 @@ public class MainActivity extends AppCompatActivity {
         setChangedCourseList(fullCourseList);
         // выводим сообщение
         Toast.makeText(this, "Фильтер выключен", Toast.LENGTH_SHORT).show();
+    }
+
+    public void Info(View view){
+        Toast.makeText(this, "Информация о компании", Toast.LENGTH_SHORT).show();
+    }
+
+    public  void Contacts(View view){
+        Toast.makeText(this, "Вывод контактов компании", Toast.LENGTH_SHORT).show();
     }
 }
